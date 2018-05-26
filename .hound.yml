@@ -1,0 +1,7 @@
+fail_on_violations: false
+ruby:
+  config_file: .rubocop.yml
+scss:
+  enabled: false
+javascript:
+  enabled: false
