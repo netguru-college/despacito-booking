@@ -51,6 +51,8 @@ ActiveRecord::Schema.define(version: 2018_05_26_130631) do
     t.datetime "updated_at", null: false
     t.string "email"
     t.string "phone"
+    t.float "latitude"
+    t.float "longitude"
   end
 
   create_table "resources", force: :cascade do |t|

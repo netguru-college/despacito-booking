@@ -83,6 +83,7 @@ GEM
     erubi (1.7.1)
     execjs (2.7.0)
     ffi (1.9.23)
+    geocoder (1.4.8)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     haml (5.0.4)
@@ -237,6 +238,7 @@ DEPENDENCIES
   capybara (>= 2.15, < 4.0)
   chromedriver-helper
   devise
+  geocoder
   haml
   jbuilder (~> 2.5)
   jquery-rails
