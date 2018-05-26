@@ -2,13 +2,18 @@ require 'rails_helper'
 
 RSpec.describe Booking, type: :model do
   subject { described_class.new }
+  let(:user) { User.create!(password: "password", password_confirmation: "password", email: "email@wp.pl") }
+  let(:resource) { Resource.create }
+
+  it { should belong_to(:user) }
+  it { should belong_to(:resource) }
 
   it "is valid with valid attributes" do
-    subject.user_id = 12
-    subject.resource_id = 13
+    subject.user_id = user.id
+    subject.resource_id = resource.id
     subject.date_from = "2019-02-03T04:05:06+00:00"
-    subject.date_to = "2019-02-03T04:05:06+00:00"
-    subject.total_price = 0
+    subject.date_to = "2019-03-03T04:05:06+00:00"
+    subject.total_price = 12
     expect(subject).to be_valid
   end
 
