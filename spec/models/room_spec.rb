@@ -1,24 +1,27 @@
 require 'rails_helper'
 
 RSpec.describe Room, type: :model do
+  subject { described_class.new(name: 'Apartment', price_per_night: 10,
+                                no_of_beds: 1) }
+
   context 'without a name' do
     it 'is not valid' do
-      room = Room.new(name: nil)
-      expect(room).to_not be_valid
+      subject.name = nil
+      expect(subject).to_not be_valid
     end
   end
 
   context 'with negative price' do
     it 'is not valid' do
-      room = Room.new(name: 'Apartament', price_per_night: -3)
-      expect(room).to_not be_valid
+      subject.price_per_night = -3
+      expect(subject).to_not be_valid
     end
   end
 
   context 'with 0 number of beds' do
     it 'is not valid' do
-      room = Room.new(name: 'Apartment', no_of_beds: 0)
-      expect(room).to_not be_valid
+      subject.no_of_beds = 0
+      expect(subject).to_not be_valid
     end
   end
 end
