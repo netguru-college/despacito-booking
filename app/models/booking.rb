@@ -5,7 +5,7 @@ class Booking < ApplicationRecord
   validates :resource_id, presence: true
   validates :date_from, presence: true
   validates :date_to, presence: true
-  validates :total_price, numericality: { greater_than_or_equal_to: 0}, presence: true
+  validates :total_price, numericality: { greater_than_or_equal_to: 0 }, presence: true
   validate  :correct_date?
 
  def correct_date?
