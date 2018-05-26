@@ -25,6 +25,16 @@ ActiveRecord::Schema.define(version: 2018_05_26_115727) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "payments", force: :cascade do |t|
+    t.bigint "booking_id"
+    t.decimal "amount"
+    t.string "status"
+    t.datetime "paid_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["booking_id"], name: "index_payments_on_booking_id"
+  end
+  
   create_table "hotels", force: :cascade do |t|
     t.string "name"
     t.string "address"
@@ -65,4 +75,5 @@ ActiveRecord::Schema.define(version: 2018_05_26_115727) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "payments", "bookings"
 end
