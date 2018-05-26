@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  root 'home#index'
+  root 'resources#index'
 
   devise_for :users
-  
+
   resources :bookings do
     resources :payments
   end

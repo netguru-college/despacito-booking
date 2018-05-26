@@ -1,0 +1,12 @@
+.container
+  .row
+    - @resources.each do |resource|
+      .col-4
+        .card
+          -# Test image: https://www.pexels.com/search/hotel/
+          %img.card-img-top{:alt => "Card image cap", :src => "/apartment-bed-bedroom-271624.jpg"}/
+          .card-body
+            %h5.card-title= resource.name
+            %p.card-text= resource.description
+            %a.btn.btn-primary{:href => resource_path(resource)} See availability
+= render "links"

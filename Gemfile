@@ -15,6 +15,7 @@ gem 'bootstrap', '~> 4.1.1'
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'jquery-rails'
 gem 'geocoder'
+gem "simple_calendar", "~> 2.0"
 gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
