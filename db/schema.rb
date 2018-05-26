@@ -46,6 +46,10 @@ ActiveRecord::Schema.define(version: 2018_05_26_091804) do
     t.datetime "date_from"
     t.datetime "date_to"
     t.decimal "total_price"
+
+  create_table "resources", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
