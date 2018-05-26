@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_26_115727) do
+ActiveRecord::Schema.define(version: 2018_05_26_130631) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,15 +25,26 @@ ActiveRecord::Schema.define(version: 2018_05_26_115727) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "hotels", force: :cascade do |t|
+  create_table "cars", force: :cascade do |t|
+    t.string "name"
+    t.integer "price_per_h"
+    t.integer "car_rental_place_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "resource_id"
+  end
+
+    create_table "hotels", force: :cascade do |t|
     t.string "name"
     t.string "address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "email"
     t.string "phone"
+    t.float "latitude"
+    t.float "longitude"
   end
-
+  
   create_table "payments", force: :cascade do |t|
     t.bigint "booking_id"
     t.decimal "amount"
@@ -49,6 +60,16 @@ ActiveRecord::Schema.define(version: 2018_05_26_115727) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "rooms", force: :cascade do |t|
+    t.string "name"
+    t.integer "price_per_night"
+    t.integer "no_of_beds"
+    t.integer "hotel_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "resource_id"
   end
 
   create_table "users", force: :cascade do |t|
