@@ -1,6 +1,6 @@
 class Booking < ApplicationRecord
- # belongs_to :user
- # belongs_to :resource
+ belongs_to :user
+ belongs_to :resource
  validates :user_id, presence: true
  validates :resource_id, presence: true
  validates :date_from, presence: true
