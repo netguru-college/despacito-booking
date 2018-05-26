@@ -6,9 +6,9 @@
     %ul.navbar-nav.mr-auto
       %li.nav-item.active
         = link_to('Home', root_path, class: 'nav-link')
-      -# %li.nav-item
-      -#   %a.nav-link{href: "#"} Link
     %form.form-inline.my-2.my-lg-0
-      -# = link_to 'Login', new_user_session_path, :class => "btn btn-outline-success my-2 my-sm-0", :remote => true, "data-toggle" => "modal", "data-target" => "exampleModal"
-      -# = link_to('Login', new_user_session_path, class: 'btn btn-outline-success my-2 my-sm-0')
-      %button.btn.btn-outline-success.my-2.my-sm-0{"data-target" => "#exampleModal", "data-toggle" => "modal", type: "button"} Login
+      - if user_signed_in?
+        = link_to 'Logout', destroy_user_session_path, method: :delete, class: 'btn btn-danger'
+      - else
+        %button.btn.btn-outline-success.my-2.my-sm-0{"data-target" => "#exampleModal", "data-toggle" => "modal", type: "button"} Login
+        = link_to 'Sign Up', new_user_registration_path, class: 'btn btn-outline-warning my-2 my-sm-0'
