@@ -25,6 +25,15 @@ ActiveRecord::Schema.define(version: 2018_05_26_115727) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "hotels", force: :cascade do |t|
+    t.string "name"
+    t.string "address"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "email"
+    t.string "phone"
+  end
+
   create_table "resources", force: :cascade do |t|
     t.string "name"
     t.text "description"
