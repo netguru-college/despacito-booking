@@ -1,2 +1,1 @@
-class Resource < ApplicationRecord
-end
+class Resource < ApplicationRecord; end
