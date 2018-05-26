@@ -1,24 +1,33 @@
-# README
+# Despacito Booking
+[![Build status](https://travis-ci.org/netguru-code-college/despacito-booking.png)](https://travis-ci.org/netguru-code-college/despacito-booking)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Technology
 
-Things you may want to cover:
+| Name |  Version |
+| :--: | :---: |
+| [Ruby](https://www.ruby-lang.org) | 2.5.1 |
+| [Ruby on Rails](http://www.rubyonrails.org/) | 5.2 |
 
-* Ruby version
+## Links
 
-* System dependencies
+[Trello](https://trello.com/b/nXRL4bGQ/team-despacito)
+[Heroku](http://despacito-booking.herokuapp.com/)
+[TravisCI](https://travis-ci.org/netguru-code-college/despacito-booking)
 
-* Configuration
+## Setup
 
-* Database creation
+Make sure you have [Ruby](https://www.ruby-lang.org) and [Bundler](http://bundler.io) installed.
 
-* Database initialization
+#### Clone the repository
 
-* How to run the test suite
+    $ git clone git@github.com:netguru-code-college/despacito-booking.git && cd despacito-booking
 
-* Services (job queues, cache servers, search engines, etc.)
+#### Install gems
 
-* Deployment instructions
+    $ bundle install
 
-* ...
+#### Run the application
+
+    $ rails server
+
+Your app should now be running on [localhost:3000](http://localhost:3000).
