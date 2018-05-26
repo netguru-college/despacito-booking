@@ -10,11 +10,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 2018_05_26_091804) do
+ActiveRecord::Schema.define(version: 2018_05_26_115249) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookings", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "resource_id"
+    t.integer "payment_id"
+    t.datetime "date_from"
+    t.datetime "date_to"
+    t.decimal "total_price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "payments", force: :cascade do |t|
+    t.bigint "booking_id"
+    t.decimal "amount"
+    t.string "status"
+    t.datetime "paid_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["booking_id"], name: "index_payments_on_booking_id"
+  end
+
+  create_table "resources", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -38,20 +65,7 @@ ActiveRecord::Schema.define(version: 2018_05_26_091804) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-
-  create_table "bookings", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "resource_id"
-    t.integer "payment_id"
-    t.datetime "date_from"
-    t.datetime "date_to"
-    t.decimal "total_price"
-
-  create_table "resources", force: :cascade do |t|
-    t.string "name"
-    t.text "description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "payments", "bookings"
 end
