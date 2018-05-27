@@ -6,3 +6,11 @@
   margin-left: 15px;
   margin-right: 15px;
 }
+
+.day.current-month {
+  background: #28a745;
+}
+
+.has-events.current-month {
+  background: #dc3545;
+}

@@ -1,0 +1,20 @@
+<table class="table">
+  <tr>
+      <th>ID</th>
+      <th>Resource</th>
+      <th>Date From</th>
+      <th>Date To</th>
+      <th>Price</th>
+      <th>Payment Status</th>
+    </tr>
+  <% @bookings.order("created_at asc").each do |booking| %>
+    <tr>
+      <td><%= booking.id %></td>
+      <td><%= booking.resource.name %></td>
+      <td><%= booking.date_from.strftime("%d-%m-%Y") %></td>
+      <td><%= booking.date_to.strftime("%d-%m-%Y") %></td>
+      <td><%= booking.total_price %></td>
+      <td><%= booking.payments.last&.status %></td>
+    </tr>
+  <% end %>
+</table>
