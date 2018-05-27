@@ -10,3 +10,8 @@ en:
     update:
       success: 'The Payment has been updated'
       alert: 'The Payment update has failed'
+  resources:
+    new:
+      name: Name of the resource
+      accept: Create
+      Image: Add image
