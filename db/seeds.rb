@@ -14,6 +14,12 @@ User.all.each do |user|
                    date_to: Date.today + 10.days,
                    total_price: rand(10.0..100.0))
   end
+end
 
-  puts '.'
+Booking.all.each do |booking|
+  rand(3).times do
+    Payment.create(booking_id: booking.id, amount: rand(10..300))
+
+    puts '.'
+  end
 end
