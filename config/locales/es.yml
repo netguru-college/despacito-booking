@@ -17,5 +17,5 @@ es:
       Image: 'Añadir imagen'
   bookings:
     create:
-      success: 'Booking has been succesfully added!'
-      alert: 'Booking failed'
+      success: '¡El reserva ha sido añadido con éxito!'
+      alert: 'Reserva fallido.'
