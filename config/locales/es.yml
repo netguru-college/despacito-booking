@@ -15,3 +15,7 @@ es:
       name: 'Nombre del recurso'
       accept: 'Crear'
       Image: 'Añadir imagen'
+  bookings:
+    create:
+      success: 'Booking has been succesfully added!'
+      alert: 'Booking failed'
