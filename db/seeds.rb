@@ -1,7 +1,19 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+6.times do
+  FactoryBot.create(:user)
+end
+
+['Car', 'Hotel room', 'Laptop'].each do |resource|
+  Resource.create(name: resource, description: Faker::Lorem.sentence)
+end
+
+User.all.each do |user|
+  rand(5).times do
+    Booking.create(user_id: user.id,
+                   resource_id: Resource.all.sample.id,
+                   date_from: Date.today + 1.day,
+                   date_to: Date.today + 10.days,
+                   total_price: rand(10.0..100.0))
+  end
+
+  puts '.'
+end
