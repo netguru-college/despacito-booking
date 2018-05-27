@@ -11,7 +11,7 @@ amazon:
   service: S3
   access_key_id: AKIAJ4RF444DE546NWAQ
   secret_access_key: 0oFz5p8hnKiMP1ukSG54ng/hmZbesPbQY6YpjCCG
-  region: EU (Paris)
+  region: eu-west-3
   bucket: despacito-booking
 
 # Remember not to checkin your GCS keyfile to a repository

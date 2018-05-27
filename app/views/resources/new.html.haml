@@ -1,0 +1,19 @@
+.container
+  .row
+    .col-lg-12
+      = form_for @resource, html: { class: 'form-horizontal', multipart: true } do |f|
+        .card
+          .card-body
+            .form-group
+              = f.label :name, t('.name'), class: 'control-label'
+              = f.text_field :name, class: 'form-control'
+            .form-group
+              = f.label :description, t('.description'), class: 'control-label'
+              = f.text_area :description, class: 'form-control'
+            .form-group
+              = f.file_field :image, multiple: false, direct_upload: true, options: { class: "btn btn-success" }
+          .card-footer
+            .pull-right
+              = f.submit t('.accept'), class: 'btn btn-success'
+
+
