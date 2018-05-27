@@ -1,6 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    action_policy (0.1.3)
     actioncable (5.2.0)
       actionpack (= 5.2.0)
       nio4r (~> 2.0)
@@ -269,6 +270,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  action_policy
   aws-sdk-s3
   bootsnap (>= 1.1.0)
   bootstrap (~> 4.1.1)

@@ -11,10 +11,16 @@ class ResourcesController < ApplicationController
 
   def new
     @resource = Resource.new()
+    authorize! @resource
+
+  rescue ActionPolicy::Unauthorized
+    redirect_to resources_path, danger: t('.not_atuhorized')
   end
 
   def create
     @resource = Resource.new(resource_params)
+    authorize! @resource
+
     if @resource.save
       redirect_to resources_path,
                   success: t('.created_resource', resource_name: @resource.name)
