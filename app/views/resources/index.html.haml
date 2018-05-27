@@ -1,11 +1,28 @@
-.container
-  .row
-    - @resources.each do |resource|
-      .col-4
-        .card
-          -# Test image: https://www.pexels.com/search/hotel/
-          %img.card-img-top{:alt => "Card image cap", :src => "/apartment-bed-bedroom-271624.jpg"}/
-          .card-body
-            %h5.card-title= resource.name
-            %p.card-text= resource.description
-            %a.btn.btn-primary{:href => resource_path(resource)} See availability
+%header.masthead
+  .container
+    .intro-text
+      .intro-lead-in Welcome To Despacito Booking!
+      .intro-heading.text-uppercase Slowly and easy
+      %a.btn.btn-primary.btn-xl.text-uppercase.js-scroll-trigger{:href => "#resources"} Check our resources!
+
+/ resources
+%section#resources
+  .container
+    .row
+      .col-lg-12.text-center
+        %h2.section-heading.text-uppercase Resources
+        %h3.section-subheading.text-muted Lorem ipsum dolor sit amet consectetur.
+    .row.text-center
+      - @resources.each do |resource|
+        .col-md-4
+          .card
+            -# Test image: https://www.pexels.com/search/hotel/
+            %img.card-img-top{:alt => "Card image cap", :src => "/apartment-bed-bedroom-271624.jpg"}/
+            .card-body
+              %h5.card-title= resource.name
+              %p.card-text= resource.description
+              %a.btn.btn-primary{:href => resource_path(resource)} See availability
+
+
+= render partial: 'layouts/team'
+= render partial: 'layouts/contact'

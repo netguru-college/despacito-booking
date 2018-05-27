@@ -1,0 +1,29 @@
+/ Contact
+%section#contact
+  .container
+    .row
+      .col-lg-12.text-center
+        %h2.section-heading.text-uppercase Contact Us
+        %h3.section-subheading.text-muted Lorem ipsum dolor sit amet consectetur.
+    .row
+      .col-lg-12
+        %form#contactForm{:name => "sentMessage", :novalidate => "novalidate"}
+          .row
+            .col-md-6
+              .form-group
+                %input#name.form-control{"data-validation-required-message" => "Please enter your name.", :placeholder => "Your Name *", :required => "required", :type => "text"}/
+                %p.help-block.text-danger
+              .form-group
+                %input#email.form-control{"data-validation-required-message" => "Please enter your email address.", :placeholder => "Your Email *", :required => "required", :type => "email"}/
+                %p.help-block.text-danger
+              .form-group
+                %input#phone.form-control{"data-validation-required-message" => "Please enter your phone number.", :placeholder => "Your Phone *", :required => "required", :type => "tel"}/
+                %p.help-block.text-danger
+            .col-md-6
+              .form-group
+                %textarea#message.form-control{"data-validation-required-message" => "Please enter a message.", :placeholder => "Your Message *", :required => "required"}
+                %p.help-block.text-danger
+            .clearfix
+            .col-lg-12.text-center
+              #success
+              %button#sendMessageButton.btn.btn-primary.btn-xl.text-uppercase{:type => "submit"} Send Message
