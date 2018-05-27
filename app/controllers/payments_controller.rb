@@ -28,11 +28,15 @@ class PaymentsController < ApplicationController
 
   def download_receipt
     @payment = Payment.find(params[:id])
-    
-    send_data @payment.receipt.render,
-      filename: "#{@payment.created_at.strftime("%Y-%m-%d")}-gorails-receipt.pdf",
-      type: "application/pdf",
-      disposition: :inline
+
+    respond_to do |format|
+      format.pdf {
+        send_data @payment.receipt.render,
+          filename: "#{@payment.created_at.strftime("%Y-%m-%d")}-gorails-receipt.pdf",
+          type: "application/pdf",
+          disposition: :inline
+      }
+    end
   end
 
   private
