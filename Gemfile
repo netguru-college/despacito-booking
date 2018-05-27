@@ -18,6 +18,8 @@ gem 'geocoder'
 gem "simple_calendar", "~> 2.0"
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'receipts'
+gem 'faker'
+gem 'factory_bot_rails'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

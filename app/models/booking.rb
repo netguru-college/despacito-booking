@@ -7,6 +7,7 @@ class Booking < ApplicationRecord
   validates :date_to, presence: true
   validates :total_price, numericality: { greater_than_or_equal_to: 0 }, presence: true
   validate  :correct_date?
+  has_many :payments
 
  def correct_date?
    if self.date_from < DateTime.now
