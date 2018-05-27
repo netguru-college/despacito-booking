@@ -1,17 +1,16 @@
 %header.masthead
   .container
     .intro-text
-      .intro-lead-in Welcome To Despacito Booking!
-      .intro-heading.text-uppercase Slowly and easy
-      %a.btn.btn-primary.btn-xl.text-uppercase.js-scroll-trigger{:href => "#resources"} Check our resources!
+      .intro-lead-in= t('welcome')
+      .intro-heading.text-uppercase= t('heading1')
+      %a.btn.btn-primary.btn-xl.text-uppercase.js-scroll-trigger{:href => "#resources"}= t('check_resources')
 
 / resources
 %section#resources
   .container
     .row
       .col-lg-12.text-center
-        %h2.section-heading.text-uppercase Resources
-        %h3.section-subheading.text-muted Lorem ipsum dolor sit amet consectetur.
+        %h2.section-heading.text-uppercase= t('resources')
     .row.text-center
       - @resources.each do |resource|
         .col-md-4
@@ -21,7 +20,7 @@
             .card-body
               %h5.card-title= resource.name
               %p.card-text= resource.description
-              %a.btn.btn-primary{:href => resource_path(resource)} See availability
+              %a.btn.btn-primary{:href => resource_path(resource)}= t('see_availability')
 
 
 = render partial: 'layouts/team'

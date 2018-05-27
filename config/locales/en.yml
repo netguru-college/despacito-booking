@@ -3,6 +3,11 @@ en:
   logout: 'Logout'
   sign_up: 'Sign Up'
   log_in: 'Log in'
+  welcome: 'Welcome To Despacito Booking!'
+  heading1: 'Slowly and easy'
+  check_resources: 'Check our resources'
+  resources: 'Resources'
+  see_availability: 'See availability'
   payments:
     create:
       success: 'Payment has been succesfully added!'

@@ -5,15 +5,22 @@
     %button.navbar-toggler.navbar-toggler-right{"aria-controls" => "navbarResponsive", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarResponsive", "data-toggle" => "collapse", :type => "button"}
       Menu
       %i.fa.fa-bars
+    .flags
+      = link_to '?locale=pl' do
+        = image_tag 'https://cdn1.iconfinder.com/data/icons/ensign-11/512/204_Ensign_Flag_Nation_poland-256.png', class: 'flag-icon'
+      = link_to '?locale=es' do
+        = image_tag 'https://cdn1.iconfinder.com/data/icons/ensign-11/512/242_Ensign_Flag_Nation_spain-256.png', class: 'flag-icon'
+      = link_to '?locale=en' do
+        = image_tag 'https://cdn1.iconfinder.com/data/icons/ensign-11/512/273_Ensign_Flag_Nation_kingdom-256.png', class: 'flag-icon'
     #navbarResponsive.collapse.navbar-collapse
       %ul.navbar-nav.text-uppercase.ml-auto
         %li.nav-item
-          %a.nav-link.js-scroll-trigger{:href => root_path} Home
+          %a.nav-link.js-scroll-trigger{:href => root_path}= t('home')
         - if user_signed_in?
           %li.nav-item
-            = link_to 'Logout', destroy_user_session_path, method: :delete, class: 'nav-link js-scroll-trigger'
+            = link_to t('logout'), destroy_user_session_path, method: :delete, class: 'nav-link js-scroll-trigger'
         - else
           %li.nav-item
-            %button.btn-link.nav-link.js-scroll-trigger{"data-target" => "#exampleModal", "data-toggle" => "modal", type: "button"} Login
+            %button.btn-link.nav-link.js-scroll-trigger{"data-target" => "#exampleModal", "data-toggle" => "modal", type: "button"}= t('log_in')
           %li.nav-item
-            = link_to 'Sign Up', new_user_registration_path, class: 'nav-link js-scroll-trigger'
+            = link_to t('sign_up'), new_user_registration_path, class: 'nav-link js-scroll-trigger'
