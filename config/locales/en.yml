@@ -31,3 +31,8 @@
 
 en:
   hello: "Hello world"
+  resources:
+    new:
+      name: Name of the resource
+      accept: Create
+      Image: Add image
