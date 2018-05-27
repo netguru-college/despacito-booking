@@ -10,9 +10,9 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     if @booking.save
-      redirect_to @booking, notice: "Booking has been succesfully added!"
+      redirect_to @booking, notice: t('.success')
     else
-      redirect_to @booking, alert: "Booking failed!"
+      redirect_to @booking, alert: t('.alert')
     end
 end
 
