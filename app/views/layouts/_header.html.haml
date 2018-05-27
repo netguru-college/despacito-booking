@@ -5,9 +5,10 @@
   #navbarSupportedContent.collapse.navbar-collapse
     %ul.navbar-nav.mr-auto
       %li.nav-item.active
-        = link_to('Home', root_path, class: 'nav-link')
+        = link_to(t('home'), root_path, class: 'nav-link')
     %form.form-inline.my-2.my-lg-0
       - if user_signed_in?
+        = link_to 'Add resource', new_resource_path, class: 'btn btn-primary add-btn'
         = link_to 'Logout', destroy_user_session_path, method: :delete, class: 'btn btn-danger'
       - else
         %button.btn.btn-outline-success.my-2.my-sm-0{"data-target" => "#exampleModal", "data-toggle" => "modal", type: "button"} Login

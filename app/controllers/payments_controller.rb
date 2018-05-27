@@ -7,9 +7,9 @@ class PaymentsController < ApplicationController
     @payment = Payment.new(booking_id: params[:booking_id], status: "unpaid")
 
     if @payment.save
-      redirect_to @booking, notice: "Payment has been succesfully added!"
+      redirect_to @booking, notice: t('.success')
     else
-      redirect_to @booking, alert: "Payment failed!"
+      redirect_to @booking, alert: t('.alert')
     end
   end
 
@@ -17,9 +17,9 @@ class PaymentsController < ApplicationController
     @payment = Payment.find(params[:id])
 
     if @payment.update(payment_params)
-      redirect_to @booking, notice: "The Payment has been updated"
+      redirect_to @booking, notice: t('.success')
     else
-      redirect_to @booking, alert: "The Payment update has failed"
+      redirect_to @booking, alert: t('.alert')
     end
   end
 

@@ -1,0 +1,13 @@
+pl:
+  home: 'Strona główna'
+  logout: 'Wyloguj'
+  sign_up: 'Zarejestruj się'
+  log_in: 'Zaloguj się'
+  payments:
+    home: 'Strona główna'
+    create:
+      success: 'Płatność została dodana'
+      alert: 'Płatność się nie powiodła'
+    update:
+      success: 'Płatność została dodana'
+      alert: 'Aktualizacja płatności nie powiodła się'
