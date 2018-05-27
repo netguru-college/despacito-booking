@@ -10,7 +10,8 @@
           %a.nav-link.js-scroll-trigger{:href => root_path} Home
         - if user_signed_in?
           - if current_user.admin?
-            = link_to 'Add resource', new_resource_path, class: 'btn btn-primary add-btn'
+            %li.nav-item
+              = link_to 'Add resource', new_resource_path, class: 'nav-link js-scroll-trigger'
           %li.nav-item
             = link_to 'Logout', destroy_user_session_path, method: :delete, class: 'nav-link js-scroll-trigger'
         - else
