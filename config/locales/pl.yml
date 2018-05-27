@@ -11,3 +11,7 @@ pl:
     update:
       success: 'Płatność została dodana'
       alert: 'Aktualizacja płatności nie powiodła się'
+  bookings:
+    create:
+      success: 'Rezerwacja została dodana'
+      alert: 'Rezerwacja się nie powiodła'

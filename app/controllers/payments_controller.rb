@@ -2,6 +2,9 @@ class PaymentsController < ApplicationController
   before_action :find_booking
   skip_before_action :authenticate_user!
 
+  def show
+    @payment = Payment.find(params[:id])
+  end
 
   def create
     @payment = Payment.new(booking_id: params[:booking_id], status: "unpaid")
@@ -21,6 +24,15 @@ class PaymentsController < ApplicationController
     else
       redirect_to @booking, alert: t('.alert')
     end
+  end
+
+  def download_receipt
+    @payment = Payment.find(params[:id])
+    
+    send_data @payment.receipt.render,
+      filename: "#{@payment.created_at.strftime("%Y-%m-%d")}-gorails-receipt.pdf",
+      type: "application/pdf",
+      disposition: :inline
   end
 
   private

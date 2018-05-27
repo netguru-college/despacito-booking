@@ -1,0 +1,21 @@
+es:
+  home: 'Inicio'
+  logout: 'Cerrar sesión'
+  sign_up: 'Regístrate'
+  log_in: 'Iniciar sesión'
+  payments:
+    create:
+      success: '¡El pago ha sido añadido con éxito!'
+      alert: 'Pago fallido.'
+    update:
+      success: 'El pago ha sido actualizado'
+      alert: 'La actualización del pago ha fallaso'
+  resources:
+    new:
+      name: 'Nombre del recurso'
+      accept: 'Crear'
+      Image: 'Añadir imagen'
+  bookings:
+    create:
+      success: '¡El reserva ha sido añadido con éxito!'
+      alert: 'Reserva fallido.'

@@ -1,16 +1,20 @@
-%nav.navbar.navbar-expand-lg.navbar-light.bg-light
-  = link_to('Despacito Booking', root_path, class: 'navbar-brand')
-  %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarSupportedContent", "data-toggle" => "collapse", type: "button"}
-    %span.navbar-toggler-icon
-  #navbarSupportedContent.collapse.navbar-collapse
-    %ul.navbar-nav.mr-auto
-      %li.nav-item.active
-        = link_to(t('home'), root_path, class: 'nav-link')
-    %form.form-inline.my-2.my-lg-0
-      - if user_signed_in?
-        - if current_user.admin?
-          = link_to 'Add resource', new_resource_path, class: 'btn btn-primary add-btn'
-        = link_to 'Logout', destroy_user_session_path, method: :delete, class: 'btn btn-danger'
-      - else
-        %button.btn.btn-outline-success.my-2.my-sm-0{"data-target" => "#exampleModal", "data-toggle" => "modal", type: "button"} Login
-        = link_to 'Sign Up', new_user_registration_path, class: 'btn btn-outline-warning my-2 my-sm-0'
+%nav#mainNav.navbar.navbar-expand-lg.navbar-dark.fixed-top
+  .container
+    %a.navbar-brand.js-scroll-trigger{:href => root_path} Despacito Booking
+    %button.navbar-toggler.navbar-toggler-right{"aria-controls" => "navbarResponsive", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarResponsive", "data-toggle" => "collapse", :type => "button"}
+      Menu
+      %i.fa.fa-bars
+    #navbarResponsive.collapse.navbar-collapse
+      %ul.navbar-nav.text-uppercase.ml-auto
+        %li.nav-item
+          %a.nav-link.js-scroll-trigger{:href => root_path} Home
+        - if user_signed_in?
+          - if current_user.admin?
+            = link_to 'Add resource', new_resource_path, class: 'btn btn-primary add-btn'
+          %li.nav-item
+            = link_to 'Logout', destroy_user_session_path, method: :delete, class: 'nav-link js-scroll-trigger'
+        - else
+          %li.nav-item
+            %button.btn-link.nav-link.js-scroll-trigger{"data-target" => "#exampleModal", "data-toggle" => "modal", type: "button"} Login
+          %li.nav-item
+            = link_to 'Sign Up', new_user_registration_path, class: 'nav-link js-scroll-trigger'

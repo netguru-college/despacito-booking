@@ -19,3 +19,7 @@ en:
     create:
       failed_to_create: 'Please check the fields'
       created_resource: Resource has been successfully created.
+    bookings:
+      create:
+        success: 'Booking has been succesfully added!'
+        alert: 'Booking failed'
