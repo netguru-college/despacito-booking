@@ -23,6 +23,13 @@ class PaymentsController < ApplicationController
     end
   end
 
+  def download_receipt
+    send_data @payment.receipt.render,
+      filename: "#{@payment.created_at.strftime("%Y-%m-%d")}-gorails-receipt.pdf",
+      type: "application/pdf",
+      disposition: :inline
+  end
+
   private
   def find_booking
     @booking = Booking.find(params[:booking_id])
