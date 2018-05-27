@@ -14,7 +14,7 @@ class ResourcesController < ApplicationController
     authorize! @resource
 
   rescue ActionPolicy::Unauthorized
-    redirect_to resources_path, danger: t('.not_atuhorized')
+    redirect_to resources_path, danger: t('.not_authorized')
   end
 
   def create
