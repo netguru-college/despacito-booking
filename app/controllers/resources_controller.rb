@@ -26,7 +26,7 @@ class ResourcesController < ApplicationController
 
   private
     def resource_params
-      params.require(:resource).permit(:name, :image)
+      params.require(:resource).permit(:name, :description, :image)
     end
 
     def set_post

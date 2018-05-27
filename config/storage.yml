@@ -9,8 +9,8 @@ local:
 # Use rails credentials:edit to set the AWS secrets (as aws:access_key_id|secret_access_key)
 amazon:
   service: S3
-  access_key_id: AKIAJ4RF444DE546NWAQ
-  secret_access_key: 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
+  access_key_id: <%= Rails.application.credentials.dig(:aws, :access_key_id) %>
+  secret_access_key: <%= Rails.application.credentials.dig(:aws, :secret_access_key) %>
   region: eu-west-3
   bucket: despacito-booking
 
