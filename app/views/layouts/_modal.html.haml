@@ -23,7 +23,5 @@
               autocomplete: "off"
 
         .modal-footer
-          %button.btn
-            .btn-secondary{ "data-dismiss" => "modal",
-              type: "button" } Close
+          %button.btn.btn-secondary{ "data-dismiss" => "modal", type: "button" } Close
           = f.submit "Log in", class: 'btn btn-primary'
