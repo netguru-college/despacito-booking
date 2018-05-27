@@ -1,6 +1,8 @@
-/* ...
-*= require simple_calendar
-*= require_self
-*= require_tree .
-*/
 @import "bootstrap";
+@import 'bootstrap-sprockets';
+@import 'bootstrap-datetimepicker';
+@import 'simple_calendar';
+@import '_footer';
+@import 'home';
+@import 'payments';
+@import 'resources';
