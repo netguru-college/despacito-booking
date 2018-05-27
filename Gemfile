@@ -15,6 +15,7 @@ gem 'bootstrap', '~> 4.1.1'
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'jquery-rails'
 gem 'geocoder'
+gem "simple_calendar", "~> 2.0"
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'faker'
 gem 'factory_bot_rails'
@@ -35,6 +36,8 @@ group :test do
   gem 'capybara', '>= 2.15', '< 4.0'
   gem 'selenium-webdriver'
   gem 'chromedriver-helper'
+  gem 'shoulda', '~> 3.5'
+  gem 'shoulda-matchers', '~> 2.0'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

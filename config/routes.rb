@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
-  root 'home#index'
+  root 'resources#index'
 
   devise_for :users
+
+  resources :bookings do
+    resources :payments
+  end
   resources :rooms
   resources :cars
-  resources :bookings
   resources :resources
+
 end
