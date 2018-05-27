@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe PaymentsController, type: :controller do
 
-  let (:user) { User.create(email: "test@test.com", password: "123456") }
-  let (:resource) {Resource.create}
+  let (:user) { create(:user) }
+  let (:resource) { create(:resource) }
   let (:booking) { Booking.create(total_price: 12, date_from: Time.now + 1.hour, date_to: Time.now + 2.hour, resource_id: resource.id, user_id: user.id) }
 
   describe "POST #create" do

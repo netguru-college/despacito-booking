@@ -20,6 +20,10 @@ en:
       name: Name of the resource
       accept: Create
       Image: Add image
+      not_authorized: You're not authorized to perform this action!
+    create:
+      failed_to_create: 'Please check the fields'
+      created_resource: Resource has been successfully created.
     bookings:
       create:
         success: 'Booking has been succesfully added!'

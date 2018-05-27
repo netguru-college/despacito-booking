@@ -2,8 +2,9 @@ require 'rails_helper'
 
 RSpec.describe Booking, type: :model do
   subject { described_class.new }
-  let(:user) { User.create!(password: "password", password_confirmation: "password", email: "email@wp.pl") }
-  let(:resource) { Resource.create }
+  # let(:user) { User.create!(password: "password", password_confirmation: "password", email: "email@wp.pl") }
+  let(:user) { create(:admin) }
+  let(:resource) { create(:resource) }
 
   it { should belong_to(:user) }
   it { should belong_to(:resource) }
