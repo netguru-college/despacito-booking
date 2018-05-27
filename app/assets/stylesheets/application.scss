@@ -1,8 +1,12 @@
-@import "bootstrap";
 @import 'bootstrap-sprockets';
+@import "bootstrap";
 @import 'bootstrap-datetimepicker';
 @import 'simple_calendar';
 @import '_footer';
 @import 'home';
 @import 'payments';
 @import 'resources';
+
+.marginTop{
+ margin-top: 200px;
+}

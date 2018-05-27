@@ -1,8 +1,9 @@
-= month_calendar attribute: :date_from, end_attribute: :date_to, events: @resource.bookings do |date, bookings|
-  = date.day
-  - bookings.each do |booking|
-    %div
-      = booking.user.email
+.container.marginTop
+  = month_calendar attribute: :date_from, end_attribute: :date_to, events: @resource.bookings do |date, bookings|
+    = date.day
+    - if !bookings.empty?
+      %div
+        = "Not available"
 
 = render "bookingform"
 = render "links"
