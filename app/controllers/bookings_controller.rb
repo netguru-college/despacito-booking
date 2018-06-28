@@ -1,7 +1,6 @@
 class BookingsController < ApplicationController
-
   def index
-    @bookings = Booking.joins(:resource).where(:bookings => {:user_id => current_user})
+    @bookings = Booking.joins(:resource).where(bookings: { user_id: current_user })
   end
 
   def show
@@ -11,13 +10,13 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     if @booking.save
-      redirect_to @booking, notice: t('.success')
+      redirect_to @booking, notice: t(".success")
     else
-      redirect_to @booking, alert: t('.alert')
+      redirect_to @booking, alert: t(".alert")
     end
-end
+  end
 
-def booking_params
-  params.require(:booking).permit(:date_from, :date_to, :total_price)
-end
+  def booking_params
+    params.require(:booking).permit(:date_from, :date_to, :total_price)
+  end
 end

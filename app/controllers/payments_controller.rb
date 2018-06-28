@@ -10,9 +10,9 @@ class PaymentsController < ApplicationController
     @payment = Payment.new(booking_id: params[:booking_id], status: "unpaid")
 
     if @payment.save
-      redirect_to @booking, notice: t('.success')
+      redirect_to @booking, notice: t(".success")
     else
-      redirect_to @booking, alert: t('.alert')
+      redirect_to @booking, alert: t(".alert")
     end
   end
 
@@ -20,9 +20,9 @@ class PaymentsController < ApplicationController
     @payment = Payment.find(params[:id])
 
     if @payment.update(payment_params)
-      redirect_to @booking, notice: t('.success')
+      redirect_to @booking, notice: t(".success")
     else
-      redirect_to @booking, alert: t('.alert')
+      redirect_to @booking, alert: t(".alert")
     end
   end
 
@@ -30,16 +30,17 @@ class PaymentsController < ApplicationController
     @payment = Payment.find(params[:id])
 
     respond_to do |format|
-      format.pdf {
+      format.pdf do
         send_data @payment.receipt.render,
-          filename: "#{@payment.created_at.strftime("%Y-%m-%d")}-gorails-receipt.pdf",
-          type: "application/pdf",
-          disposition: :inline
-      }
+                  filename: "#{@payment.created_at.strftime('%Y-%m-%d')}-gorails-receipt.pdf",
+                  type: "application/pdf",
+                  disposition: :inline
+      end
     end
   end
 
   private
+
   def find_booking
     @booking = Booking.find(params[:booking_id])
   end

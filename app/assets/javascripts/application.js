@@ -5,3 +5,4 @@
 //= require moment
 //= require bootstrap-datetimepicker
 //= require activestorage
+//= require_tree .

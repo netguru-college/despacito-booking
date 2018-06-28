@@ -6,7 +6,7 @@ pl:
   welcome: 'Witaj w DespacitoBooking'
   heading1: 'Wolno lecz łatwo.'
   check_resources: 'Zobacz co oferujemy!'
-  resources: 'Oferta:'
+  resources_title: 'Oferta:'
   see_availability: 'Zobacz dostępność'
   payments:
     home: 'Strona główna'

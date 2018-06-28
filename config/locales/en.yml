@@ -6,7 +6,7 @@ en:
   welcome: 'Welcome To Despacito Booking!'
   heading1: 'Slowly and easy'
   check_resources: 'Check our resources'
-  resources: 'Resources'
+  resources_title: 'Resources'
   see_availability: 'See availability'
   payments:
     create:

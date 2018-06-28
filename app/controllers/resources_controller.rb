@@ -6,15 +6,13 @@ class ResourcesController < ApplicationController
     @resources = Resource.all
   end
 
-  def show
-  end
+  def show; end
 
   def new
-    @resource = Resource.new()
+    @resource = Resource.new
     authorize! @resource
-
   rescue ActionPolicy::Unauthorized
-    redirect_to resources_path, danger: t('.not_authorized')
+    redirect_to resources_path, danger: t(".not_authorized")
   end
 
   def create
@@ -23,19 +21,20 @@ class ResourcesController < ApplicationController
 
     if @resource.save
       redirect_to resources_path,
-                  success: t('.created_resource', resource_name: @resource.name)
+                  success: t(".created_resource", resource_name: @resource.name)
     else
-      flash.now[:danger] = t('.failed_to_create')
+      flash.now[:danger] = t(".failed_to_create")
       render :new
     end
   end
 
   private
-    def resource_params
-      params.require(:resource).permit(:name, :description, :image)
-    end
 
-    def set_post
-      @resource = Resource.find(params[:id])
-    end
+  def resource_params
+    params.require(:resource).permit(:name, :description, :image)
+  end
+
+  def set_post
+    @resource = Resource.find(params[:id])
+  end
 end
